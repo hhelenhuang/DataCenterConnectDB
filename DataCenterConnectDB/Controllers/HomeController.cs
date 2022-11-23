@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication1.Models;
+using DataCenterConnectDB.Models;
 
-namespace WebApplication1.Controllers
+namespace DataCenterConnectDB.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,6 +17,14 @@ namespace WebApplication1.Controllers
             return View();
         }
         public ActionResult CreateLoginContact()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateLoginContact(LoginContact loginContact) {
+            return View();
+        }
+        public ActionResult EditLoginContact(int id)
         {
             return View();
         }

@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace WebApplication1.Models
+namespace DataCenterConnectDB.Models
 {
     public class DBmanager
     {
