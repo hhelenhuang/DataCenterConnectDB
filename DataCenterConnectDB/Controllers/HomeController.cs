@@ -20,10 +20,21 @@ namespace DataCenterConnectDB.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult CreateLoginContact(LoginContact loginContact) {
-            return View();
+            DBmanager dBmanager = new DBmanager();
+            try
+            {
+                dBmanager.NewLoginContact(loginContact);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return RedirectToAction("Index");
         }
+
         public ActionResult EditLoginContact(int id)
         {
             return View();

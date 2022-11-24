@@ -41,6 +41,20 @@ namespace DataCenterConnectDB.Models
             sqlConnection.Close();
             return logincontacts;
         }
+        public void NewLoginContact(LoginContact loginContact)
+        {
+            SqlConnection sqlConn = new SqlConnection(ConnStr);
+            SqlCommand sqlCom = new SqlCommand(
+                @"INSERT INTO loginContact (LoginNum, INDO, PW)
+             VALUES(@LoginNum, @INDO, @PW)");
+            sqlCom.Connection = sqlConn;
+            sqlCom.Parameters.Add(new SqlParameter("@LoginNum", loginContact.LoginNum));
+            sqlCom.Parameters.Add(new SqlParameter("@INDO", loginContact.INDO));
+            sqlCom.Parameters.Add(new SqlParameter("@PW", loginContact.PW));
+            sqlConn.Open();
+            sqlCom.ExecuteNonQuery();
+            sqlConn.Close();
+        }
 
     }
 }

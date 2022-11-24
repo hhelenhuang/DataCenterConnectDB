@@ -30,14 +30,17 @@
 
         @foreach (LoginContact loginContact in loginContacts)
         {
-            <tr>
-                <th>@loginContact.LoginNum</th>
-                <th>@loginContact.INDO</th>
-                <th>@loginContact.PW</th>
-                <th>@Html.ActionLink("編輯", "EditLoginContact",new { id= loginContact.LoginNum })</th>
+        <tr>
+            <th>@loginContact.LoginNum</th>
+            <th>@loginContact.INDO</th>
+            <th>@loginContact.PW</th>
+            @* <th>@Html.ActionLink("編輯", "EditLoginContact",new { id= loginContact.LoginNum })</th>*@
 
-            </tr>
-        }
+        </tr>
+                }
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
+        <p>
+            @Html.ActionLink("新增資料", "CreateLoginContact")
+        </p>
