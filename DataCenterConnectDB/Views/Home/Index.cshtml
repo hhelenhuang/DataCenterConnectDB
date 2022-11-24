@@ -3,19 +3,6 @@
     List<LoginContact> loginContacts = ViewBag.loginContacts;
 }}
 
-@*{
-      foreach (LoginContact loginContact in loginContacts) {
-
-      <div>
-          <span>@loginContact.LoginNum</span>
-          <span>@loginContact.INDO</span>
-          <span>@loginContact.PW</span>
-      </div>
-
-       }
-
-    }*@
-
 <table class="table">
     <thead>
         <tr>
@@ -27,18 +14,15 @@
     </thead>
     <tbody>
 
-
         @foreach (LoginContact loginContact in loginContacts)
         {
         <tr>
             <th>@loginContact.LoginNum</th>
             <th>@loginContact.INDO</th>
             <th>@loginContact.PW</th>
-            @* <th>@Html.ActionLink("編輯", "EditLoginContact",new { id= loginContact.LoginNum })</th>*@
-
+            <th>@Html.ActionLink("編輯", "EditLoginContact",new { id = loginContact.LoginNum })</th>
         </tr>
                 }
-
             </tbody>
         </table>
         <p>
