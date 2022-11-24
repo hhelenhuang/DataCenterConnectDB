@@ -58,7 +58,7 @@ namespace DataCenterConnectDB.Models
         public LoginContact GetLoginContactById(int id) {
             LoginContact loginContact = new LoginContact();
             SqlConnection sqlConn = new SqlConnection(ConnStr);
-            SqlCommand sqlCom = new SqlCommand("SELECT * FROM LoginContact WHERE  id = @id");
+            SqlCommand sqlCom = new SqlCommand("SELECT * FROM LoginContact WHERE LoginNum = @id");
             sqlCom.Connection = sqlConn;
             sqlCom.Parameters.Add(new SqlParameter("@id", id));
             sqlConn.Open();
@@ -68,7 +68,7 @@ namespace DataCenterConnectDB.Models
                 {
                     loginContact = new LoginContact
                     {
-                        LoginNum = reader.GetInt32(reader.GetOrdinal("id")),
+                        LoginNum = reader.GetInt32(reader.GetOrdinal("LoginNum")),
                         INDO = reader.GetString(reader.GetOrdinal("INDO")),
                         PW = reader.GetString(reader.GetOrdinal("PW")),
                     };
