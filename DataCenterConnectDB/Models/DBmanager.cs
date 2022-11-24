@@ -45,8 +45,7 @@ namespace DataCenterConnectDB.Models
         {
             SqlConnection sqlConn = new SqlConnection(ConnStr);
             SqlCommand sqlCom = new SqlCommand(
-                @"INSERT INTO loginContact (INDO, PW)
-             VALUES( @INDO, @PW)");
+                @"INSERT INTO loginContact (INDO, PW) VALUES( @INDO, @PW)");
             sqlCom.Connection = sqlConn;
             sqlCom.Parameters.Add(new SqlParameter("@INDO", loginContact.INDO));
             sqlCom.Parameters.Add(new SqlParameter("@PW", loginContact.PW));
@@ -80,7 +79,18 @@ namespace DataCenterConnectDB.Models
             sqlConn.Close();
             return loginContact;
         }
-
+        public void UpdateLoginContact(LoginContact loginContact) {
+            SqlConnection sqlConn = new SqlConnection(ConnStr);
+            SqlCommand sqlCom = new SqlCommand(
+               @"UPDATE LoginContact SET INDO = @INDO, PW = @PW WHERE LoginNum = @id");
+            sqlCom.Connection = sqlConn;
+            sqlCom.Parameters.Add(new SqlParameter("@INDO", loginContact.INDO));
+            sqlCom.Parameters.Add(new SqlParameter("@PW", loginContact.PW));
+            sqlCom.Parameters.Add(new SqlParameter("@id", loginContact.LoginNum));
+            sqlConn.Open();
+            sqlCom.ExecuteNonQuery();
+            sqlConn.Close();
+        }
 
     }
 }

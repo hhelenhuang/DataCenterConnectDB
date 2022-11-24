@@ -20,7 +20,10 @@
             <th>@loginContact.LoginNum</th>
             <th>@loginContact.INDO</th>
             <th>@loginContact.PW</th>
-            <th>@Html.ActionLink("編輯", "EditLoginContact",new { id = loginContact.LoginNum })</th>
+            <th>
+                @Html.ActionLink("編輯", "EditLoginContact", new { id = loginContact.LoginNum })
+                @Html.ActionLink("刪除", "DeleteLoginContact", new { id = loginContact.LoginNum })
+            </th>
         </tr>
                 }
             </tbody>
