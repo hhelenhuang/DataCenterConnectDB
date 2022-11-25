@@ -41,10 +41,10 @@ namespace DataCenterConnectDB.Controllers
             return View(loginContact);
         }
 
-        public ActionResult DeleteLoginContact(int id, LoginContact loginContacts)
+        public ActionResult DeleteLoginContact(int id, LoginContact loginContact)
         {
             DBmanager dBmanager = new DBmanager();
-            dBmanager.DeleteLoginContactById(id, loginContacts.LoginNum);
+            dBmanager.DeleteLoginContactById(id, loginContact);
             return RedirectToAction("Index");
         }
 
