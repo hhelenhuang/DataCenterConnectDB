@@ -50,10 +50,10 @@ namespace DataCenterConnectDB.Controllers
 
         }
 
-        public ActionResult DeleteLoginContact(LoginContact loginContact)
+        public ActionResult DeleteLoginContact(int id)
         {
             DBmanager dBmanager = new DBmanager();
-            dBmanager.DeleteLoginContactById(loginContact);
+            dBmanager.DeleteLoginContactById(id);
             return RedirectToAction("Index");
         }
 

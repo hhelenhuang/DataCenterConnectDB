@@ -95,13 +95,13 @@ namespace DataCenterConnectDB.Models
             sqlConn.Close();
         }
 
-        public void DeleteLoginContactById(LoginContact loginContact)
+        public void DeleteLoginContactById(int id)
         {
             SqlConnection sqlConn = new SqlConnection(ConnStr);
             SqlCommand sqlCom = new SqlCommand(
                @"DELETE FROM LoginContact WHERE LoginNum = @id");
             sqlCom.Connection = sqlConn;
-            sqlCom.Parameters.Add(new SqlParameter("@id", loginContact.LoginNum));
+            sqlCom.Parameters.Add(new SqlParameter("@id", id));
             sqlConn.Open();
             sqlCom.ExecuteNonQuery();
             sqlConn.Close();
