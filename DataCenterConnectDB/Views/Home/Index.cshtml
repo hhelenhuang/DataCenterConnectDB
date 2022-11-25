@@ -23,7 +23,7 @@
             <th>
                 @Html.ActionLink("編輯", "EditLoginContact", new { id = loginContact.LoginNum })
                 |
-                @Html.ActionLink("刪除", "DeleteLoginContact", new { id = loginContact.LoginNum })
+                @Html.ActionLink("刪除", "DeleteLoginContact", new { loginContact = loginContact })
             </th>
         </tr>
                 }

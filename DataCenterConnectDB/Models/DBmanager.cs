@@ -95,7 +95,7 @@ namespace DataCenterConnectDB.Models
             sqlConn.Close();
         }
 
-        public void DeleteLoginContactById(int id, LoginContact loginContact)
+        public void DeleteLoginContactById(LoginContact loginContact)
         {
             SqlConnection sqlConn = new SqlConnection(ConnStr);
             SqlCommand sqlCom = new SqlCommand(
