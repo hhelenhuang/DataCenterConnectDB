@@ -34,17 +34,26 @@ namespace DataCenterConnectDB.Controllers
             }
             return RedirectToAction("Index");
         }
+       
         public ActionResult EditLoginContact(int id)
         {
             DBmanager dBmanager = new DBmanager();
             LoginContact loginContact = dBmanager.GetLoginContactById(id);
             return View(loginContact);
+        } 
+        [HttpPost]
+        public ActionResult EditLoginContact(LoginContact loginContact)
+        {
+            DBmanager dBmanager = new DBmanager();
+           dBmanager.UpdateLoginContact(loginContact);
+            return RedirectToAction("Index");
+
         }
 
         public ActionResult DeleteLoginContact(int id, LoginContact loginContacts)
         {
             DBmanager dBmanager = new DBmanager();
-            dBmanager.DeleteLoginContactById(id, loginContacts.LoginNum);
+            dBmanager.DeleteLoginContactById(id, loginContacts);
             return RedirectToAction("Index");
         }
 
