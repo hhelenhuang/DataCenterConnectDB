@@ -1,24 +1,100 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 應用程式</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- font awsome css link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="~/Content/maicons.css">
+
+    <link rel="stylesheet" href="~/Scripts/vendor/animate/animate.css">
+
+    <link rel="stylesheet" href="~/Scripts/vendor/owl-carousel/css/owl.carousel.css">
+
+    <link rel="stylesheet" href="~/Scripts/vendor/fancybox/css/jquery.fancybox.css">
+
+    <link rel="stylesheet" href="~/Content/theme.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+
+    <title>大數據醫療資料申請</title>
+
 </head>
 <body>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
-    </div>
+    <div class="back-to-top"></div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow mb-3 fixed-top" style="background-color: #1b6ec2;">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                <h3><b><img src="~/img/TSGH_LogoSS-2.png" alt="">  大數據醫療資料申請</b></h3>
+            </a>
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
+                    <li class="nav-item active">
+                        <a href="@Url.Action("Index", "Home")" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("About", "Home")" class="nav-link text-light"><i class="fa-solid fa-ruler"></i>  詳閱相關規定</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Form", "Home")" class="nav-link text-light"><i class="fa-solid fa-pen-to-square"></i>  申請表單</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Declaration", "Home")" class="nav-link text-light"><i class="fa-solid fa-pen-to-square"></i>  填寫聲明書</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="@Url.Action("Login", "Login")" class="nav-link text-light"><i class="fa-solid fa-pen-to-square"></i>  帳密</a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!-- .container -->
+    </nav> <!-- .navbar -->
+
+
+    @RenderBody()
+
+    <footer class="mt-2 py-2 border-top container">
+        <p>&copy; 2022 - 三軍總醫院 數據中心</p>
+    </footer>
+
+    <script src="~/Scripts/ssets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="~/Scripts/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/Scripts/assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <script src="~/Scripts/vendor/wow/wow.min.js"></script>
+
+    <script src="~/Scripts/vendor/fancybox/js/jquery.fancybox.min.js"></script>
+
+    <script src="~/Scripts/vendor/isotope/isotope.pkgd.min.js"></script>
+
+    <script src="~/Scripts/js/google-maps.js"></script>
+
+    <script src="~/Scripts/js/theme.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

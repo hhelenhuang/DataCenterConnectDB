@@ -11,51 +11,54 @@ namespace DataCenterConnectDB.Controllers
     {
         public ActionResult Index()
         {
-            DBmanager dBmanager = new DBmanager();
-            List<LoginContact> loginContacts = dBmanager.GetLoginContact();
-            ViewBag.loginContacts = loginContacts;
-            return View();
-        }
-        public ActionResult CreateLoginContact()
-        {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateLoginContact(LoginContact loginContact) {
-            DBmanager dBmanager = new DBmanager();
-            try
-            {
-                dBmanager.NewLoginContact(loginContact);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            return RedirectToAction("Index");
-        }
-       
-        public ActionResult EditLoginContact(int id)
+        public ActionResult About()
         {
-            DBmanager dBmanager = new DBmanager();
-            LoginContact loginContact = dBmanager.GetLoginContactById(id);
-            return View(loginContact);
-        } 
-        [HttpPost]
-        public ActionResult EditLoginContact(LoginContact loginContact)
-        {
-            DBmanager dBmanager = new DBmanager();
-           dBmanager.UpdateLoginContact(loginContact);
-            return RedirectToAction("Index");
 
+            return View();
         }
 
-        public ActionResult DeleteLoginContact(int id)
+        public ActionResult Form()
         {
-            DBmanager dBmanager = new DBmanager();
-            dBmanager.DeleteLoginContactById(id);
-            return RedirectToAction("Index");
+
+            return View();
+        }
+
+        public ActionResult FormIndex()
+        {
+
+            return View();
+        }
+        public ActionResult FormCreate()
+        {
+
+            return View();
+        }
+        public ActionResult Declaration()
+        {
+
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+
+            return View();
+        }
+        public ActionResult UserCreate()
+        {
+
+            return View();
+        }
+
+        public ActionResult UserEdit()
+        {
+
+            return View();
         }
 
     }
+
 }

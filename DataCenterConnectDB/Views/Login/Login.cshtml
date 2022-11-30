@@ -1,0 +1,34 @@
+﻿@using DataCenterConnectDB.Models;
+@{
+    List<LoginContact> loginContacts = ViewBag.loginContacts;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>編號</th>
+            <th>身分證字號</th>
+            <th>密碼</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (LoginContact loginContact in loginContacts)
+        {
+        <tr>
+            <th>@loginContact.LoginNum</th>
+            <th>@loginContact.INDO</th>
+            <th>@loginContact.PW</th>
+            <th>
+                @Html.ActionLink("編輯", "EditLoginContact", new { id = loginContact.LoginNum })
+                |
+                @Html.ActionLink("刪除", "DeleteLoginContact", new { id = loginContact.LoginNum })
+            </th>
+        </tr>
+                }
+            </tbody>
+        </table>
+        <p>
+            @Html.ActionLink("新增資料", "CreateLoginContact")
+        </p>
