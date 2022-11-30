@@ -2,33 +2,49 @@
 @{
     List<LoginContact> loginContacts = ViewBag.loginContacts;
 }
+<main>
+    <div class="page-section">
+        <div class="container">
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>編號</th>
+                        <th>身分證字號</th>
+                        <th>密碼</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <h2>LoginContactList</h2>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>編號</th>
-            <th>身分證字號</th>
-            <th>密碼</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+                    @foreach (LoginContact loginContact in loginContacts)
+                    {
+                        <tr>
+                            <th>@loginContact.LoginNum</th>
+                            <th>@loginContact.INDO</th>
+                            <th>@loginContact.PW</th>
+                            <th>
+                                @Html.ActionLink(" 編輯", "EditLoginContact", "Login", new { id = loginContact.LoginNum }, new { @class = "btn btn-info fa-solid fa-pen-to-square" })
 
-        @foreach (LoginContact loginContact in loginContacts)
-        {
-        <tr>
-            <th>@loginContact.LoginNum</th>
-            <th>@loginContact.INDO</th>
-            <th>@loginContact.PW</th>
-            <th>
-                @Html.ActionLink("編輯", "EditLoginContact", new { id = loginContact.LoginNum })
-                |
-                @Html.ActionLink("刪除", "DeleteLoginContact", new { id = loginContact.LoginNum })
-            </th>
-        </tr>
-                }
-            </tbody>
-        </table>
+                                @Html.ActionLink(" 刪除", "DeleteLoginContact", "Login", new { id = loginContact.LoginNum }, new { @class = "btn btn-danger fa-solid fa-trash" })
+                            </th>
+
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
         <p>
-            @Html.ActionLink("新增資料", "CreateLoginContact")
+            @Html.ActionLink(" 新增資料", "CreateLoginContact", "Login", new { @class = "btn btn-secondary fa-solid fa-plus" })
         </p>
+        </div> <!-- .container -->
+    </div> <!-- .page-section -->
+    <script>
+        $(document).ready(function () {
+            $('body').bootstrapMaterialDesign();
+            $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+
+        });
+    </script>
+</main>
