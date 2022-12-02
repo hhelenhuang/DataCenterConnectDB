@@ -46,7 +46,6 @@ namespace DataCenterConnectDB.Controllers
             DBmanager dBmanager = new DBmanager();
             dBmanager.UpdateLoginContact(loginContact);
             return RedirectToAction("Login/EditLoginContact");
-
         }
 
         public ActionResult DeleteLoginContact(int id)

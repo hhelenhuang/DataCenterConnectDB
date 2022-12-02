@@ -106,5 +106,70 @@ namespace DataCenterConnectDB.Models
             sqlCom.ExecuteNonQuery();
             sqlConn.Close();
         }
+
+
+        public List<Form> GetForm()
+        {
+            List<Form> forms = new List<Form>();
+            using (SqlConnection myConnection = new SqlConnection(ConnStr))
+            {
+                myConnection.Open();
+                using (SqlCommand command1 = new SqlCommand("SELECT * FROM Contact", myConnection))
+                {
+                    SqlDataReader reader = command1.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Form form = new Form
+                            {
+                                INDO = reader.GetString(reader.GetOrdinal("INDO")),
+                                Name = reader.GetString(reader.GetOrdinal("Name")),
+                                Department = reader.GetString(reader.GetOrdinal("Department")),
+                                Position = reader.GetString(reader.GetOrdinal("Position")),
+                                Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                                Email = reader.GetString(reader.GetOrdinal("Email")),
+                            };
+                            forms.Add(form);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("資料庫為空！");
+                    }
+                }
+                using (SqlCommand command2 = new SqlCommand("SELECT * FROM ApplyTable", myConnection))
+                {
+                    SqlDataReader reader = command2.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Form form = new Form
+                            {
+                                ApplyID = reader.GetInt32(reader.GetOrdinal("ApplyID")),
+                                ApplyDate = reader.GetString(reader.GetOrdinal("ApplyDate")),
+                                ApplyIDNO = reader.GetString(reader.GetOrdinal("ApplyIDNO")),
+                                ContractIDNO = reader.GetString(reader.GetOrdinal("ContractIDNO")),
+                                ApplyType = reader.GetString(reader.GetOrdinal("ApplyType")),
+                                ApplyName = reader.GetString(reader.GetOrdinal("ApplyName")),
+                                ApplyStartDate = reader.GetString(reader.GetOrdinal("ApplyStartDate")),
+                                ApplyEndDate = reader.GetString(reader.GetOrdinal("ApplyEndDate")),
+                                ApplyDescribe = reader.GetString(reader.GetOrdinal("ApplyDescribe")),
+                                ApplyContent = reader.GetString(reader.GetOrdinal("ApplyContent")),
+
+                            };
+                            forms.Add(form);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("資料庫為空！");
+                    }
+                }
+                myConnection.Close();
+                return forms;
+            }
+        }
     }
 }
