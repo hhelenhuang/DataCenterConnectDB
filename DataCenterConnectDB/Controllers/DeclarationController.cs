@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DataCenterConnectDB.Models;
-
 
 namespace DataCenterConnectDB.Controllers
 {
+    [Route("declarations/Declaration")]
+
     public class DeclarationController : Controller
     {
         // GET: Declaration

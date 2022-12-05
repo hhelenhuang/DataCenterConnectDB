@@ -20,8 +20,6 @@ namespace DataCenterConnectDB.Controllers
             return View();
         }
 
-        
-
     }
 
 }
