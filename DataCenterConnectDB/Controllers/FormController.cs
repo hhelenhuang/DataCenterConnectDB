@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataCenterConnectDB.Models;
+
 
 namespace DataCenterConnectDB.Controllers
 {
@@ -58,9 +60,9 @@ namespace DataCenterConnectDB.Controllers
 
         public ActionResult Form()
         {
-            DBmanager dBmanager = new DBmanager();
-            List<Form> forms = dBmanager.GetForm();
-            ViewBag.forms = forms;
+            //DBmanager dBmanager = new DBmanager();
+            //List<Form> forms = dBmanager.GetForm();
+            //ViewBag.forms = forms;
             return View();
         }
         //    }

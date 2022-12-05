@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DataCenterConnectDB.Models;
+
 
 namespace DataCenterConnectDB.Controllers
 {
-    public class AboutController : Controller
+    public class DeclarationController : Controller
     {
-        // GET: About
+        // GET: Declaration
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Declaration()
         {
             return View();
         }

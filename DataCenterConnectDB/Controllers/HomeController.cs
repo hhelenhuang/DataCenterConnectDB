@@ -20,44 +20,7 @@ namespace DataCenterConnectDB.Controllers
             return View();
         }
 
-        public ActionResult Form()
-        {
-
-            return View();
-        }
-
-        public ActionResult FormIndex()
-        {
-
-            return View();
-        }
-        public ActionResult FormCreate()
-        {
-
-            return View();
-        }
-        public ActionResult Declaration()
-        {
-
-            return View();
-        }
-
-        public ActionResult Login()
-        {
-
-            return View();
-        }
-        public ActionResult UserCreate()
-        {
-
-            return View();
-        }
-
-        public ActionResult UserEdit()
-        {
-
-            return View();
-        }
+        
 
     }
 

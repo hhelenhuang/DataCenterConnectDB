@@ -157,7 +157,6 @@ namespace DataCenterConnectDB.Models
                                 ApplyEndDate = reader.GetString(reader.GetOrdinal("ApplyEndDate")),
                                 ApplyDescribe = reader.GetString(reader.GetOrdinal("ApplyDescribe")),
                                 ApplyContent = reader.GetString(reader.GetOrdinal("ApplyContent")),
-
                             };
                             forms.Add(form);
                         }
