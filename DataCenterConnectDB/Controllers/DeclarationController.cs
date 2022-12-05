@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace DataCenterConnectDB.Controllers
 {
-    [Route("declarations/Declaration")]
 
     public class DeclarationController : Controller
     {
